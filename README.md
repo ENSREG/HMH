@@ -70,6 +70,8 @@ And modify the mountPath of `minikube` volume:
 ### 2. Install the test-client helm chart
 
 ```sh
+# Package the test-server helm chart
+$ helm package test-server/
 $ cd test-client
 $ helm install test-client .
 $ helm ls
