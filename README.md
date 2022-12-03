@@ -53,14 +53,14 @@ And modify the mountPath of `minikube` volume:
               name: minikube
 ```
 
-> Tips: get the mountPath that should be set by checking `~/.kube/config`:
+> Tips: get the mountPath that should be set by checking `~/.kube/config`, which is the configuration of `kubectl`:
 > ```
 > $ cd ~/.kube
 > $ cat config
 > ```
 > We will see the path of the certificate-authority:
 > **certificate-authority: /home/ianchen0119/.minikube/ca.crt**
-> refer the result above, we will know where the `.minikube` directory shold be mount.
+> refer the result above, we will know where the `.minikube` directory shold be mounted.
 
 ### 2. Install the test-client helm chart
 
