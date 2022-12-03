@@ -13,12 +13,17 @@ Manage helm chart in another helm chart.
 
 Build required docker image by following command:
 ```sh
-./build.sh
+$ ./build.sh
+```
+
+Load docker image into minikube:
+```sh
+$ minikube image load helm-client
 ```
 
 (Optional) Establish the docker container based on the image you created:
 ```
-docker run -ti --rm --network host -v ~/.minikube:/home/ianchen0119/.minikube   -v ~/.kube:/root/.kube -v ~/.helm:/root/.helm -v ~/.config/helm:/root/.config/helm     -v ~/.cache/helm:/root/.cache/helm helm-client:latest
+$ docker run -ti --rm --network host -v ~/.minikube:/home/ianchen0119/.minikube   -v ~/.kube:/root/.kube -v ~/.helm:/root/.helm -v ~/.config/helm:/root/.config/helm     -v ~/.cache/helm:/root/.cache/helm helm-client:latest
 ```
 
 ### 1. Modify the test-client helm chart
@@ -99,7 +104,7 @@ test-server-85db4b786c-qvbdb   1/1     Running   0          21h   172.17.0.3    
 ### [Optional] debug commands
 
 ```sh
-kubectl exec --stdin --tty <POD> -- /bin/bash
+$ kubectl exec --stdin --tty <POD> -- /bin/bash
 ```
 
 ## References
